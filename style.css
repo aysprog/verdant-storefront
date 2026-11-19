@@ -1,0 +1,23 @@
+:root{--ink:#17231c;--muted:#5f6d64;--green:#1d3a2b;--accent:#b9532d;--bg:#f6f2ea;--line:#e2dccd}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+img{display:block;max-width:100%}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw;background:#fff;border-bottom:1px solid var(--line)}
+.brand{font:600 1.4rem Georgia,serif;color:var(--green);text-decoration:none}
+.cart,.btn,.add{font:inherit;font-weight:600;background:var(--green);color:#fff;border:0;border-radius:99px;padding:.6rem 1.2rem;cursor:pointer;text-decoration:none;display:inline-block}
+.cart:hover,.btn:hover,.add:hover{background:var(--accent)}
+.hero{padding:4rem 5vw;background:var(--green);color:#fff}
+.hero h1{font:500 clamp(2rem,6vw,3.5rem)/1.1 Georgia,serif;margin:0 0 1rem;max-width:16ch}
+.hero p{max-width:32rem;margin:0 0 1.5rem;opacity:.9}
+.hero .btn{background:#fff;color:var(--green)}
+.shop{padding:2.5rem 5vw}
+.toolbar{display:flex;gap:.8rem;flex-wrap:wrap;margin:1rem 0 1.5rem}
+.toolbar input,.toolbar select{font:inherit;padding:.6rem .9rem;border:1px solid var(--line);border-radius:10px;background:#fff}
+.toolbar input{flex:1 1 14rem}
+.grid{list-style:none;margin:0;padding:0;display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card img{width:100%;aspect-ratio:4/4.6;object-fit:cover}
+.card div{padding:.9rem}
+.card h3{margin:0 0 .2rem;font-size:1.05rem}
+.card p{margin:0 0 .8rem;color:var(--muted)}
+.foot{padding:1.5rem 5vw;text-align:center;color:var(--muted)}
