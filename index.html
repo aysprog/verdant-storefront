@@ -3,33 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Verdant & Co. — considered plants and homeware.">
   <title>Verdant &amp; Co. — Plants &amp; Homeware</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="#">Verdant &amp; Co.</a>
-    <button class="cart" id="cart-btn">Cart (<span id="badge">0</span>)</button>
+  <a class="skip" href="#shop">Skip to products</a>
+  <div class="announce">Free shipping on orders over $75 · 30-day plant guarantee</div>
+  <header class="top" id="top">
+    <a class="brand" href="#">Verdant<em>&amp;</em>Co.</a>
+    <nav class="nav" aria-label="Primary"><a href="#shop">Shop</a></nav>
+    <button class="btn btn--ghost btn--sm" id="cart-btn" aria-haspopup="dialog">Cart <span class="badge" id="badge">0</span></button>
   </header>
+
   <main>
     <section class="hero">
-      <h1>Plants &amp; homeware for calm homes</h1>
-      <p>Healthy plants, handmade pots and the tools to keep them thriving.</p>
-      <a href="#shop" class="btn">Shop now</a>
-    </section>
-    <section id="shop" class="shop">
-      <h2>Shop all</h2>
-      <div class="toolbar">
-        <input id="q" type="search" placeholder="Search products" aria-label="Search products">
-        <select id="cat" aria-label="Category">
-          <option>All</option><option>Plants</option><option>Pots</option><option>Care</option><option>Decor</option>
-        </select>
+      <img class="hero__img" src="https://images.unsplash.com/photo-1773847469674-189153e5e32d?auto=format&fit=crop&w=1600&h=1000&q=70" alt="A sunlit living room filled with houseplants" width="1600" height="1000">
+      <div class="hero__shade"></div>
+      <div class="hero__copy">
+        <p class="eyebrow">Autumn collection 2026</p>
+        <h1>Bring the <em>outside</em> in.</h1>
+        <p class="lede">Healthy plants, handmade pots and the tools to keep them thriving — delivered to your door.</p>
+        <div class="row row--start"><a href="#shop" class="btn btn--light">Shop the collection</a></div>
       </div>
-      <ul id="grid" class="grid"></ul>
-      <p id="empty" hidden>No products match your search.</p>
     </section>
+
+    <section id="shop" class="shop" aria-labelledby="shop-title">
+      <div class="shop__head"><div><p class="eyebrow">The collection</p><h2 id="shop-title">Shop all</h2></div><p class="muted" id="count"></p></div>
+      <div class="shop__layout">
+        <form class="filters" role="search" id="filters">
+          <div class="field"><label for="q">Search</label><input id="q" type="search" placeholder="Try “fern” or “clay”"></div>
+          <div class="field"><label for="sort">Sort by</label>
+            <select id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="rating">Top rated</option></select></div>
+          <div class="field"><label for="price" id="price-l">Max price: $70</label><input id="price" type="range" min="10" max="70" value="70"></div>
+          <fieldset class="chips"><legend class="sr-only">Category</legend>
+            <label class="chip chip--on"><input type="radio" name="cat" value="All" checked>All</label>
+            <label class="chip"><input type="radio" name="cat" value="Plants">Plants</label>
+            <label class="chip"><input type="radio" name="cat" value="Pots">Pots</label>
+            <label class="chip"><input type="radio" name="cat" value="Care">Care</label>
+            <label class="chip"><input type="radio" name="cat" value="Decor">Decor</label>
+          </fieldset>
+        </form>
+        <div id="results"></div>
+      </div>
+    </section>
+
   </main>
-  <footer class="foot">© 2026 Verdant &amp; Co. Demo storefront.</footer>
+
+  <footer class="foot">
+    <div class="news">
+      <div><h2>Grow with us</h2><p>Seasonal care tips and first access to new arrivals. No spam, ever.</p></div>
+      <form id="nl-form" novalidate>
+        <label for="nl" class="sr-only">Email address</label>
+        <input id="nl" type="email" placeholder="Your email address" autocomplete="email" aria-describedby="nl-msg">
+        <button class="btn btn--light" type="submit">Subscribe</button>
+        <p id="nl-msg" role="status"></p>
+      </form>
+    </div>
+    <div class="foot__cols">
+      <div class="foot__brand"><span class="brand">Verdant<em>&amp;</em>Co.</span><p>Considered plants, pots and tools for calm, living homes. Grown responsibly, shipped with care.</p></div>
+      <nav aria-label="Shop"><h3>Shop</h3><ul><li><a href="#shop">All plants</a></li><li><a href="#shop">Pots &amp; planters</a></li><li><a href="#shop">Plant care</a></li><li><a href="#shop">Gift cards</a></li></ul></nav>
+      <nav aria-label="Help"><h3>Help</h3><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Care guides</a></li><li><a href="#">Contact us</a></li></ul></nav>
+      <nav aria-label="Company"><h3>Company</h3><ul><li><a href="#">Our story</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul></nav>
+    </div>
+    <div class="foot__base"><span>© 2026 Verdant &amp; Co. Demo storefront — no real payments.</span><span>Visa · Mastercard · PayPal · Apple Pay</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span></div>
+  </footer>
+
+  <div id="layer"></div>
+  <p class="sr-only" id="live" role="status" aria-live="polite"></p>
   <script src="script.js"></script>
 </body>
 </html>
