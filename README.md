@@ -1,51 +1,141 @@
-# Verdant & Co. — Accessible E-Commerce Storefront
-Arrowstack Frontend Development Internship · Project 1 · plain **HTML + CSS + JavaScript** (no build step, no npm).
+# 🌿 Verdant & Co. — Premium Plant & Homeware Storefront
 
-## Files (only 4)
-| File | Purpose |
+A modern, responsive e-commerce storefront designed for a premium plant and homeware brand. Verdant & Co. brings together elegant editorial styling, intuitive product discovery, and interactive shopping experiences in a clean, nature-inspired interface.
+
+🔗 **Live Demo:** https://aysprog.github.io/verdant-storefront/
+
+---
+
+## ✨ Overview
+
+Verdant & Co. is a front-end e-commerce project built around a fictional lifestyle brand specializing in indoor plants, decorative pots, and plant-care essentials.
+
+The website focuses on delivering a realistic online shopping experience through thoughtful visual design, interactive product components, and accessible user interactions.
+
+From browsing the collection to completing a simulated checkout, every section is designed to feel cohesive, intuitive, and responsive.
+
+## 🚀 Features
+
+- **Modern Landing Page** — Elegant hero section, promotional announcement, and brand-focused introduction.
+- **Dynamic Product Catalogue** — Browse a collection of plants, pots, care products, and home decor.
+- **Smart Product Filtering** — Filter products by category, search terms, and maximum price.
+- **Product Sorting** — Organize products by featured items, price, and customer ratings.
+- **Product Quick View** — Explore product details, image gallery, and quantity selection without leaving the shop.
+- **Interactive Shopping Cart** — Add products, update quantities, remove items, and view the order summary.
+- **Simulated Checkout** — Checkout interface with customer information, form validation, and payment-field validation.
+- **Persistent Cart** — Shopping cart data is saved using Local Storage.
+- **Newsletter Interaction** — Email input with client-side validation and feedback.
+- **Responsive Layout** — Adaptable shopping experience across desktop, tablet, and mobile devices.
+- **Accessibility Considerations** — Semantic HTML, keyboard navigation, visible focus states, accessible dialogs, and screen-reader announcements.
+- **Interactive UI States** — Loading skeletons, empty results, error feedback, notifications, and order confirmation.
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
 |---|---|
-| `index.html` | page structure, semantic landmarks, filters, footer |
-| `style.css` | design system (tokens, layout, animations, responsive) |
-| `script.js` | catalogue data, filtering, cart, product quick view, checkout + validation |
-| `README.md` | requirements, decisions, QA evidence, limitations |
+| HTML5 | Semantic structure and content |
+| CSS3 | Styling, layouts, animations, and responsiveness |
+| JavaScript (ES6+) | Product interactions and application logic |
+| Local Storage | Persistent shopping cart data |
+| Google Fonts | Fraunces and Inter typography |
+| Unsplash | Product and lifestyle imagery |
 
-## Run
-Double-click `index.html`. Preview the error state with `index.html?error`. Run the self-tests with `index.html?selftest` and open the browser console (F12).
+## 🎨 Design Direction
 
-## Publish on GitHub Pages
-1. Create a repository and upload these 4 files. 2. **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. 3. Open `https://<username>.github.io/<repo>/` after about a minute.
+The visual identity of Verdant & Co. follows a warm, editorial-inspired design approach.
 
-## Stakeholder, scope, success
-- **Primary stakeholder:** online shopper; **secondary:** store owner (conversion, fewer abandoned carts).
-- **Decision enabled:** shopper can find, compare and buy a product without friction or accessibility barriers.
-- **In scope:** discovery, filters, quick view, cart, validated checkout. **Out of scope:** real payments, accounts, backend.
-- **Success metrics:** checkout completable by keyboard only; zero keyboard traps; Lighthouse Accessibility ≥ 95; no horizontal scroll at 360 px.
+- **Color Palette:** Natural forest tones, warm neutrals, and subtle earthy accents.
+- **Typography:** Fraunces for expressive headings and Inter for clean, readable body text.
+- **Layout:** Spacious sections, structured product grids, and balanced visual hierarchy.
+- **Experience:** Subtle animations, refined interactions, and a minimal shopping interface.
 
-## Requirements → evidence
-| Requirement | Implementation |
-|---|---|
-| Responsive component system | CSS grid `auto-fill`, `clamp()` type, reusable card/modal/drawer templates in `script.js` |
-| Loading / empty / error / success | skeleton grid · "No matches" · Retry on failure (`?error`) · order confirmation |
-| Accessible keyboard navigation | skip link, visible focus, radio chips, focus trap + Esc in dialogs, focus returns to opener, arrow keys in gallery |
-| Client-side validation | `validate()` with Luhn card check and expiry rule; inline errors linked by `aria-describedby`; focus moves to first error |
-| Performance | no framework, lazy-loaded images with fixed sizes, CSS-only animation |
-| Animation | hero zoom, staggered cards, scroll reveal, modal/drawer slide, toast; disabled under `prefers-reduced-motion` |
+The overall design aims to create a calm, premium shopping atmosphere inspired by modern botanical lifestyle brands.
 
-## Decision log
-| Decision | Reason |
-|---|---|
-| Plain HTML/CSS/JS instead of React/Next.js (documented alternative) | no tooling needed to run or review; mentor opens one file; fits a 1-month scope |
-| System of pure functions (`validate`, `pricing`) | testable without the UI (`?selftest`) |
-| Palette paper / forest / clay, Fraunces + Inter | warm editorial brand, text contrast ≥ 4.5:1 |
-| Photos from Unsplash (free licence) | real imagery without hosting; mister/soil/shears/candle use closest-match photos |
+## 📂 Project Structure
 
-## QA checklist (tick and keep screenshots in your submission)
-- [ ] Tab through the page, add an item, open the cart, Tab loops inside, Esc closes
-- [ ] Submit an empty checkout → 8 errors, focus on Name
-- [ ] Search "zzz" → empty state; Clear filters restores
-- [ ] `?error` shows the error state
-- [ ] 360 px width: no horizontal scroll
-- [ ] Lighthouse report (Accessibility / Performance)
+```text
+verdant-storefront/
+│
+├── index.html      # Main website structure
+├── style.css       # Styling and responsive design
+├── script.js       # Product data and interactive functionality
+└── README.md       # Project documentation
+```
 
-## Limitations and next steps
-Mock data and simulated payment; cart in `localStorage`; "close-up" view is a zoomed crop of the main photo. Next: real API with pagination, product pages with URLs, automated tests (Playwright + axe), i18n. At 10× catalogue: server-side filtering, pagination, virtualised lists.
+## ⚙️ Getting Started
+
+No framework, package manager, or build process is required.
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/aysprog/verdant-storefront.git
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd verdant-storefront
+```
+
+**3. Run the project**
+
+Open `index.html` in your browser or use the Live Server extension in VS Code.
+
+## 🧪 Testing & Quality
+
+The project includes a lightweight self-test mode for checking core JavaScript functionality.
+
+To run the self-tests:
+
+1. Open the website using `index.html?selftest`.
+2. Open browser Developer Tools.
+3. Navigate to the Console tab.
+4. Review the test results.
+
+Additional testing considerations include:
+
+- Keyboard-only navigation.
+- Form validation and error handling.
+- Product search and filtering.
+- Shopping cart interactions.
+- Responsive behavior at smaller screen widths.
+- Reduced-motion accessibility preferences.
+
+## ⚠️ Project Limitations
+
+This is a front-end demonstration project, not a production-ready e-commerce platform.
+
+- Product information uses locally defined sample data.
+- Checkout and payment validation are simulated.
+- No real payment gateway or transaction processing is connected.
+- No backend, database, or user authentication is implemented.
+- Product images are loaded from Unsplash.
+
+## 🔮 Potential Improvements
+
+- Backend integration and database connectivity.
+- Real product management through an API.
+- Secure payment gateway integration.
+- User authentication and order history.
+- Dedicated product detail pages.
+- Automated testing with Playwright and accessibility testing tools.
+
+## 👩‍💻 Author
+
+**Ayesha Athar**
+
+Front-End Developer | Computer Science Student
+
+- GitHub: [@aysprog](https://github.com/aysprog)
+- LinkedIn: [Ayesha Athar](https://www.linkedin.com/in/ayesha-athar/)
+
+---
+
+<p align="center">
+  Designed & Developed with care by <strong>Ayesha Athar</strong> 🌿
+</p>
+
+<p align="center">
+  <sub>© 2026 Verdant & Co. — A Front-End E-Commerce Project</sub>
+</p>
